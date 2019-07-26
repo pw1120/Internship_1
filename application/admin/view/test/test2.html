@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ATI 工业自动化微官网 - Powered By 机器人在线</title>
+    <meta name="description" content="Dashboard">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="__PUBLIC__/style/bootstrap.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/style/weather-icons.css" rel="stylesheet">
+    <link id="beyond-link" href="__PUBLIC__/style/beyond.css" rel="stylesheet" type="text/css">
+    <link href="__PUBLIC__/style/demo.css" rel="stylesheet">
+    <link href="__PUBLIC__/style/typicons.css" rel="stylesheet">
+    <link href="__PUBLIC__/style/animate.css" rel="stylesheet">
+</head>
+<body>
+{include file="common/top"}
+<div class="main-container container-fluid">
+    <div class="page-container">
+        {include file="common/left"}
+        <div class="page-content">
+            <div class="page-breadcrumbs">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="{:url('index/index')}">系统</a>
+                    </li>
+                    <li class="active">测试2</li>
+                </ul>
+            </div>
+            <div class="page-body">
+                <div class="row">
+                    <div class="col-lg-12 col-sm-12 col-xs-12">
+                        <div class="widget">
+                            <div class="widget-body">
+                                <div class="flip-scroll">
+                                    <table class="table table-bordered table-hover">
+                                        <tr>
+                                            <th class="text-center" width="4%">ID</th>
+                                            <th class="text-center">食物</th>
+                                            <th class="text-center">NUM</th>
+                                        </tr>
+                                        {volist name="test2" id="te"}
+                                        <tr>
+                                            <td align="center">{$te.id}</td>
+                                            <td align="center">{$te.title}</td>
+                                            <td align="center">{$te.num}</td>
+                                        </tr>
+                                        {/volist}
+                                    </table>
+                                </div>
+                                <div style="text-align:right; margin-top:10px;">
+                                    {$test2->render()}
+                                </div>
+                                <form class="form-horizontal" role="form" enctype="multipart/form-data" action="" method="post">
+                                    <table class="table table-bordered table-hover">
+                                        <tr>
+                                            <th class="text-center">食物</th>
+                                            <th class="text-center">NUM</th>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div style="text-align: center;width: auto;padding-left: 100px;padding-right: 100px;">
+                                                    <input class="form-control" id="title" placeholder="" name="title"  type="text">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div style="text-align: center;width: auto;padding-left: 100px;padding-right: 100px;">
+                                                    <input class="form-control" id="num" placeholder="" name="num"  type="text">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <div class="col-sm-offset-2 col-sm-10" style="text-align: center;padding-right: 230px;">
+                                                    <button type="submit" class="btn btn-default">保存信息</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="__PUBLIC__/style/jquery_002.js"></script>
+<script src="__PUBLIC__/style/bootstrap.js"></script>
+<script src="__PUBLIC__/style/jquery.js"></script>
+<script src="__PUBLIC__/style/beyond.js"></script>
+</body>
+</html>

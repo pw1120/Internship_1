@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>ATI 工业自动化微官网 - Powered By 机器人在线</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content="ATI 工业自动化">
+    <meta name="description" content="ATI 工业自动化">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1,user-scalable=0">
+    <link href="__PUBLIC__/css/style.css" rel="stylesheet" type="text/css">
+    <link href="__PUBLIC__/css/iconfont.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/global.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/wxshares.js"></script>
+</head>
+
+<body>
+    {include file="comment/nav"}
+    <section class="main">
+        <div class="padding">
+            <div class="subnavigation flex">
+                <a href="science.html" class="cur">专业术语</a>
+                <a href="science_video.html">技术视频</a>
+            </div>
+            <div class="science-list">
+               <ul>
+                   {volist name="data" id="da"}
+                   <li>
+                       <a href="{:url('science_page',array('id'=>$da['id']))}">
+                           <i class="s_right iconfont icon-xiangzuo-copy"></i>{$da.title}
+                       </a>
+                   </li>
+                   {/volist}
+               </ul>
+            </div>
+        </div>
+    </section>
+    {include file="comment/footer"}
+</body>
+
+</html>

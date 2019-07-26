@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <title>ATI 工业自动化微官网 - Powered By 机器人在线</title>
+    <meta name="description" content="Dashboard">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="__PUBLIC__/style/bootstrap.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/style/weather-icons.css" rel="stylesheet">
+    <link id="beyond-link" href="__PUBLIC__/style/beyond.css" rel="stylesheet" type="text/css">
+    <link href="__PUBLIC__/style/demo.css" rel="stylesheet">
+    <link href="__PUBLIC__/style/typicons.css" rel="stylesheet">
+    <link href="__PUBLIC__/style/animate.css" rel="stylesheet">
+    <script type="text/javascript" src="__PUBLIC__/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/ueditor/ueditor.all.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/ueditor/lang/zh-cn/zh-cn.js"></script>
+</head>
+<body>
+{include file="common/top"}
+<div class="main-container container-fluid">
+    <div class="page-container">
+        {include file="common/left"}
+        <div class="page-content">
+            <div class="page-breadcrumbs">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="{:url('index/index')}">系统</a>
+                    </li>
+                    <li class="active">技术支持</li>
+                </ul>
+            </div>
+            <div class="page-body">
+                <div class="row">
+                    <div class="col-lg-12 col-sm-12 col-xs-12">
+                        <div class="widget">
+                            <div class="widget-body">
+                                <div class="flip-scroll">
+                                    <form role="form" action="" enctype="multipart/form-data" method="post">
+                                        <table class="table table-bordered table-hover">
+                                            <input type="hidden" name="id" value="{$science.id}">
+                                            <tr>
+                                                <th class="text-center" colspan="2">技术视频</th>
+                                            </tr>
+                                            <tr>
+                                                <td align="center">
+                                                    <div>
+                                                        <h6>视频展示图：</h6>
+                                                        <input id="poster" placeholder="" name="poster" style="display:inline;"   type="file">
+                                                    </div>
+                                                    <div>
+                                                        <input type="hidden" name="poster" value="{$science.poster}">
+                                                        {if condition="$science.poster neq 'img/'"}
+                                                        <img src="__IMG__/index/{$science.poster}" height="100" width="200">
+                                                        {else /}
+                                                        暂无缩略图，请选择！
+                                                        {/if}
+                                                    </div>
+
+                                                </td>
+                                                <td align="center">
+                                                    <div>
+                                                        <h6>产品介绍视频：</h6>
+                                                        <input id="video" placeholder="" name="video" style="display:inline;"  type="file">
+                                                        <input type="hidden" name="video" value="{$science.video}">
+                                                    </div>
+                                                    <div>
+                                                        {if condition="$science.video neq 'video/'"}
+                                                        <video width="200" height="100" controls="controls">
+                                                            <source src="__IMG__/index/{$science.video}" type="video/mp4">
+                                                        </video>
+                                                        {else /}
+                                                        暂无视频，请选择！
+                                                        {/if}
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center" colspan="2">
+                                                    <label>
+                                                        <textarea name="content" id="content">{$science.content}</textarea>
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center" colspan="2">
+                                                    <button type="submit">保存信息</button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="__PUBLIC__/style/jquery_002.js"></script>
+<script src="__PUBLIC__/style/bootstrap.js"></script>
+<script src="__PUBLIC__/style/jquery.js"></script>
+<script src="__PUBLIC__/style/beyond.js"></script>
+<script type="text/javascript">
+    UE.getEditor('content',{initialFrameWidth:1000,initialFrameHeight:300,});
+</script>
+</body>
+</html>
